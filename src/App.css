@@ -166,7 +166,7 @@ table tr:hover {
   .main-content {
     margin-left: 0;
     padding: 10px;
-    width: 100%; /* Ocupa todo el espacio disponible */
+    width: 70%; /* Ocupa todo el espacio disponible */
   }
 
   .sidebar button {
