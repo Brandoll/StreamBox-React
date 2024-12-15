@@ -1,4 +1,4 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite | PROYECTO FINAL | UTP
 
 Este proyecto utiliza **React**, **TypeScript**, y **Vite** para proporcionar un entorno de desarrollo rápido y moderno con soporte para HMR (Hot Module Replacement). Se han añadido configuraciones adicionales para **ESLint** con reglas personalizadas y soporte para análisis de tipo con TypeScript, adecuado para aplicaciones en producción.
 
