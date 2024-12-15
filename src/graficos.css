@@ -1,0 +1,100 @@
+/* Estilo para los gráficos individuales */
+.grafico-bar-container {
+    width: 669px;
+    position: relative;
+    left: 165px;
+    top: 40px;
+    background: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.grafico-pie-container {
+    background: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    position: relative;
+    left: 165px;
+    top: 40px;
+    width: 669px;
+    /* Ancho más largo */
+    height: 420px;
+    /* Ajusta la altura automáticamente */
+    box-shadow: 0 4px 50px rgba(0, 0, 0, 0.1);
+}
+
+.grafico-pie-container canvas {
+    width: 400px !important;
+    /* Ajusta el ancho del círculo */
+    height: 380px !important;
+    /* Ajusta la altura del círculo */
+    margin: 0 auto;
+    /* Centra el gráfico */
+}
+
+.grafico-bar-container h3,
+.grafico-pie-container h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+/* Estilo para los gráficos individuales */
+.graficos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+}
+.grafico canvas {
+    width: 420px !important;
+    height: 420px !important;
+    margin: 0 auto;
+    position: relative;
+    top: 20px;
+    text-align: center;
+}
+.grafico2 canvas {
+    width: 520px !important;
+    height: 420px !important;
+    margin: 0 auto;
+    position: relative;
+    top: 20px;
+    text-align: center;
+}
+.grafico h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+.grafico2 h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+.grafico {
+    width: 40%;
+    height: 500px;
+    position: relative;
+    top: -900px;
+    right: 70px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.grafico2 {
+    width: 40%;
+    height: 500px;
+    position: relative;
+    top: -880px;
+    right: 70px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.contenidoplataforma {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+}

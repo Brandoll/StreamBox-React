@@ -1,0 +1,219 @@
+/* Estilos generales */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  display: flex;
+  flex-direction: row; /* Los elementos se colocan en fila */
+  background-color: #f4f4f9;
+}
+
+.content{
+  display: flex;
+  height: 80vh;
+  /* Asegura que el contenedor ocupe toda la altura */
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+
+/* Barra lateral */
+.sidebar {
+  width: 250px; /* Ancho fijo para la barra lateral */
+  align-items: center;     /* Centra verticalmente */
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: fixed; /* Fija en la pantalla */
+  top: 0;
+  left: 0;
+  min-height: 100vh; /* Asegura que cubra toda la altura de la pantalla */
+  min-width: 100vw;
+  z-index: 100; /* Asegura que la barra lateral esté sobre el contenido */
+  overflow-y: auto; /* Permite desplazamiento */
+}
+
+/* Avatar y título en la barra lateral */
+.sidebar-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.sidebar-title {
+  text-align: center;
+}
+
+.sidebar-title-text {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.streambox {
+  color: #e67e22;
+}
+
+.box {
+  color: #ecf0f1;
+}
+
+/* Botones de la barra lateral */
+.sidebar button {
+  background-color: #e67e22; /* Naranja brillante */
+  color: white;
+  border: none;
+  padding: 15px;
+  margin: 10px 0;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase; /* Hacer los textos en mayúsculas */
+  letter-spacing: 1px;
+}
+
+.sidebar button:hover {
+  background-color: #d35400; /* Un naranja más oscuro cuando el ratón está sobre el botón */
+  transform: translateX(5px); /* Desplazamiento sutil hacia la derecha */
+  box-shadow: 0 0 10px rgba(230, 126, 34, 0.6);
+}
+
+/* Contenedor principal */
+.main-content {
+  margin-left: 250px; /* Deja espacio para la barra lateral */
+  padding: 20px;
+  width: calc(100% - 250px); /* El contenido ocupa el resto del espacio */
+  max-width: 1200px; /* Limita el ancho máximo */
+  height: 700px; /* Ajusta la altura automáticamente */
+  box-sizing: border-box;
+  overflow-x: auto; /* Scroll horizontal si es necesario */
+}
+
+/* Estilos para formularios */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espaciado entre los elementos del formulario */
+}
+
+form input, form select, form textarea {
+  padding: 10px;
+  font-size: 16px;
+  width: 100%; /* Ajusta al ancho del contenedor */
+  box-sizing: border-box; /* Incluye padding en el ancho */
+}
+
+form button {
+  padding: 10px 15px;
+  background-color: #e67e22;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background-color: #d35400;
+}
+
+/* Tablas */
+table {
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  border-collapse: collapse;
+  overflow-x: auto;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+table th {
+  background-color: #2c3e50;
+  color: white;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 1024px) {
+  .sidebar {
+    position: static;
+    width: 100%; /* Ocupa todo el ancho */
+    height: auto; /* Se ajusta al contenido */
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 10px;
+    width: 100%; /* Ocupa todo el espacio disponible */
+  }
+
+  .sidebar button {
+    width: 100%;
+    font-size: 16px; /* Reduce el tamaño en pantallas pequeñas */
+  }
+
+  table, form {
+    font-size: 14px; /* Reducir el tamaño en pantallas pequeñas */
+  }
+}
+
+/* Imágenes y videos responsivos */
+img, iframe, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Animaciones para la barra lateral */
+@keyframes slideIn {
+  from {
+    left: -250px;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    left: 0;
+  }
+  to {
+    left: -250px;
+  }
+}
+
+.sidebar.open {
+  animation: slideIn 0.3s forwards;
+}
+
+.sidebar.closed {
+  animation: slideOut 0.3s forwards;
+}
+
+
+
+
+
+

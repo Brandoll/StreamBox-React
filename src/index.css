@@ -1,0 +1,714 @@
+/* General Layout */
+/* General Layout */
+.app-container {
+  display: flex;
+  height: 100vh;
+  /* Asegura que el contenedor ocupe toda la altura */
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px; /* Barra lateral de tamaño fijo */
+  background-color: #ffffff;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  position: fixed; /* Barra lateral fija */
+  top: 50%; /* Posición centrada verticalmente */
+  left: 0; /* Anclado al lado izquierdo */
+  transform: translateY(-50%); /* Ajusta para centrar completamente */
+  z-index: 100; /* Asegurarse de que esté por encima del contenido */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Sidebar Header */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+
+}
+
+.sidebar-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #007bff;
+  /* Borde azul */
+}
+
+/* Título personalizado */
+.sidebar-title-text {
+  display: flex;
+  gap: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.streambox {
+  color: #333;
+  /* Color gris oscuro */
+}
+
+.box {
+  color: #ff005c;
+  /* Color rosa */
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 10px;
+}
+
+/* Menu Items */
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 43px;
+  /* Espaciado entre ícono y texto */
+  background-color: #ffffff;
+  color: #555;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  height: 65px;
+  /* Altura fija para los botones */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  width: 120%;
+  /* Incrementa el ancho total */
+  left: -10%;
+  /* Mueve hacia la izquierda */
+}
+
+
+.menu-item:hover {
+  color: #007bff;
+  /* Cambia el color del texto */
+  transform: translateX(10px);
+  /* Desplaza el botón hacia la derecha */
+}
+
+
+.menu-item:hover .menu-icon {
+  color: #007bff;
+}
+
+/* Active Item */
+.menu-item.active {
+  background-color: #edeffd;
+  color: #007bff;
+}
+
+
+.menu-item.active .menu-icon {
+  color: #007bff;
+}
+
+/* Icons */
+.menu-icon {
+  font-size: 16px;
+  color: inherit;
+  position: relative;
+  left: 28px;
+}
+
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  top: 11px;
+  left: 17%;
+  /* Ajustado para que no se desplace */
+  margin: 0 auto;
+  /* Centra el contenido horizontalmente */
+  width: 1566px;
+  height: 93%;
+}
+
+
+/* Estilos generales */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  color: #333;
+  /* Color general del texto */
+  background-color: #edeffd;
+  /* Color de fondo de toda la página */
+  height: 100vh;
+}
+
+/* Registro Container */
+.registro-container {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  width: 100%;
+  max-width: 900px;
+  /* Aumentar el tamaño máximo */
+  box-sizing: border-box;
+  position: relative;
+  left: 300px;
+}
+
+
+.titulo {
+  text-align: center;
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field {
+  margin-bottom: 20px;
+}
+
+.form-field label {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.form-field input,
+.form-field select {
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.form-button {
+  background-color: #007bff;
+  color: white;
+  padding: 16px 14px; /* Aumenta el espacio interno horizontal y vertical */
+  border-radius: 5px;
+  border: none;
+  font-size: 1.1rem; /* Tamaño de fuente ligeramente mayor */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 10px 10px; /* Agrega espacio externo entre botones */
+  position: relative;
+  left: 20px;
+}
+.form-button:hover {
+  background-color: #0056b3;
+}
+
+.form-button-submit {
+  background-color: #28a745;
+}
+
+.form-button-submit:hover {
+  background-color: #218838;
+}
+
+
+
+
+
+/* Estilos para la búsqueda de plataformas */
+.contentbusqueda {
+  width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  /* Permitir que los ítems se envuelvan */
+  gap: 20px;
+  /* Espaciado entre los ítems */
+}
+
+
+.search-container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin: 20px auto;
+  box-sizing: border-box;
+}
+
+.search-container h2 {
+  text-align: center;
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.contentbusqueda h2 {
+  position: relative;
+  left: 120px;
+}
+
+.contentbusqueda .tabla {
+  position: relative;
+  top: -40px;
+  left: 20px;
+}
+
+label {
+  position: relative;
+  top: -10px;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.search-form input,
+.search-form select {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 250px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.search-form input:focus,
+.search-form select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+.search-button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 123, 255, 0.3);
+  margin-left: 10px;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+.search-results {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.search-result-card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 250px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.search-result-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.search-result-card h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.search-result-card p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.search-result-card .category {
+  background-color: #007bff;
+  color: white;
+  font-size: 0.9rem;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+
+
+/* index.css */
+
+/* Estilos existentes aquí */
+
+/* Estilo general para la búsqueda de plataformas */
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+
+.form-field label {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.form-input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 300px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tabla th,
+.tabla td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+.tabla th {
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+.tabla tbody tr:hover {
+  background-color: #f4f6f8;
+}
+
+.tabla td {
+  background-color: #fff;
+}
+
+.tabla td,
+.tabla th {
+  border-right: 1px solid #ddd;
+}
+
+/* Estilo para las filas de la tabla */
+.tabla td {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.tabla .costo {
+  font-weight: bold;
+  color: #28a745;
+}
+
+.tabla .categoria {
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+/* Responsive para la tabla */
+@media (max-width: 768px) {
+
+  .tabla th,
+  .tabla td {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+
+  .form-input {
+    width: 100%;
+  }
+}
+
+
+/* Estilos para el contenedor de Gestión de Clientes */
+
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.formulario-generico-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.formulario-generico-container .formulario {
+  flex: 0 0 45%;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.tabla-generica-container {
+  margin-top: 20px;
+}
+
+.tabla-generica-container .tabla {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.tabla-generica-container th,
+.tabla-generica-container td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabla-generica-container th {
+  background-color: #f4f4f9;
+  color: #333;
+  font-weight: bold;
+}
+
+.tabla-generica-container td {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.tabla-generica-container tr:hover {
+  background-color: #f4f6f8;
+}
+
+.tabla-generica-container .action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.tabla-generica-container .action-buttons button {
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tabla-generica-container .action-buttons button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.tabla-generica-container .action-buttons .delete-button {
+  background-color: #ff005c;
+}
+
+.tabla-generica-container .action-buttons .delete-button:hover {
+  background-color: #e4004f;
+}
+
+/* Responsive para la tabla y formular
+ */
+
+
+
+
+/* Estilo para el placeholder con sombra */
+input::placeholder,
+select::placeholder {
+  color: #888;
+  font-size: 1rem;
+  font-style: italic;
+  transition: all 0.3s ease;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  /* Sombra suave */
+}
+
+/* Estilo cuando el input está en foco y el usuario empieza a escribir */
+input:focus::placeholder,
+select:focus::placeholder {
+  color: transparent;
+  /* El placeholder se oculta */
+}
+
+/* Asegúrate de que los inputs tienen un poco de espacio para que la sombra no se vea cortada */
+input,
+select {
+  padding-left: 10px;
+  /* Ajusta según sea necesario */
+}
+
+
+body {
+  height: 100vh;
+  /* Ocupa todo el alto de la ventana */
+  font-family: 'Poppins', sans-serif;
+  /* Fuente personalizada */
+  color: #333;
+  /* Color general del texto */
+  background-color: #edeffd;
+  /* Color de fondo de toda la página */
+}
+
+/* General Layout */
+.app-container {
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  height: 943px;
+  background-color: #ffffff;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  /* Bordes completamente redondeados */
+  margin: 10px;
+  /* Separación externa para resaltar el efecto */
+  overflow: hidden;
+  /* Para que nada sobresalga de los bordes */
+}
+
+/* Sidebar Header */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+}
+
+.sidebar-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #007bff;
+  /* Borde azul */
+}
+
+/* Título personalizado */
+.sidebar-title-text {
+  display: flex;
+  gap: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.streambox {
+  color: #333;
+  /* Color gris oscuro */
+}
+
+.box {
+  color: #ff005c;
+  /* Color rosa */
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 10px;
+  position: relative;
+  /* Para posicionar el indicador */
+}
+
+/* Indicador decorativo global */
+.menu::before {
+  content: '';
+  width: 6px;
+  /* Ancho del indicador */
+  height: 32px;
+  /* Altura igual al botón */
+  background-color: #007bff;
+  position: absolute;
+  left: 0;
+  /* Siempre alineado al borde izquierdo */
+  top: calc(37px + var(--active-index, 0) * 75px);
+  /* Desplazamiento dinámico */
+  border-radius: 3px;
+  /* Redondeo opcional */
+  transition: top 0.3s ease;
+  /* Transición suave del desplazamiento */
+  z-index: 1;
+  /* Asegura que esté sobre el fondo */
+}
+
+/*Graficos De Busqueda de plataformas*/
+.graficos-container-externo {
+  position: absolute;
+  /* Coloca el contenedor fuera del flujo normal */
+  top: -10px;
+  /* Ajusta la posición vertical según tu diseño */
+  right: 200px;
+  /* Alinea a la derecha */
+  display: flex;
+  flex-direction: column;
+  /* Gráficos en columna */
+  gap: 30px;
+  /* Espaciado entre los gráficos */
+}
+
+
