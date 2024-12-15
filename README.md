@@ -119,4 +119,4 @@ src/
 
 ---
 
-¡Gracias por usar esta plantilla! Si tienes sugerencias o encuentras algún problema, no dudes en abrir un issue.
+¡Gracias por usar este Proyecto! Si tienes sugerencias o encuentras algún problema, no dudes en abrir un issue.
