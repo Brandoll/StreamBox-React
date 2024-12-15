@@ -1,50 +1,122 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto utiliza **React**, **TypeScript**, y **Vite** para proporcionar un entorno de desarrollo rápido y moderno con soporte para HMR (Hot Module Replacement). Se han añadido configuraciones adicionales para **ESLint** con reglas personalizadas y soporte para análisis de tipo con TypeScript, adecuado para aplicaciones en producción.
 
-Currently, two official plugins are available:
+## Tecnologías utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Vite**: Herramienta de desarrollo rápida para aplicaciones web modernas.
+- **React**: Biblioteca para construir interfaces de usuario.
+- **TypeScript**: Superset de JavaScript que añade tipado estático.
+- **ESLint**: Herramienta para identificar y arreglar problemas en el código.
 
-## Expanding the ESLint configuration
+## Requisitos previos
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Node.js 16 o superior
+- npm o yarn para gestionar dependencias
 
-- Configure the top-level `parserOptions` property like this:
+## Configuración inicial
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+1. Clona el repositorio:
+   ```bash
+   git clone <URL-del-repositorio>
+   cd <nombre-del-proyecto>
+   ```
+
+2. Instala las dependencias:
+   ```bash
+   npm install
+   # o
+   yarn install
+   ```
+
+3. Inicia el servidor de desarrollo:
+   ```bash
+   npm run dev
+   # o
+   yarn dev
+   ```
+
+4. Accede a la aplicación en tu navegador en [http://localhost:5173](http://localhost:5173).
+
+## Configuración de ESLint
+
+Se ha configurado **ESLint** para que sea compatible con TypeScript y React. Para proyectos en producción, recomendamos activar reglas de análisis de tipos más estrictas.
+
+### Expandiendo la configuración de ESLint
+
+1. Configura la propiedad `parserOptions` en el archivo `eslint.config.js` para habilitar reglas conscientes de tipos:
+
+   ```js
+   export default tseslint.config({
+     languageOptions: {
+       parserOptions: {
+         project: ['./tsconfig.node.json', './tsconfig.app.json'],
+         tsconfigRootDir: import.meta.dirname,
+       },
+     },
+   });
+   ```
+
+2. Reemplaza `tseslint.configs.recommended` con una de las siguientes configuraciones más estrictas según tus necesidades:
+   - `tseslint.configs.recommendedTypeChecked`
+   - `tseslint.configs.strictTypeChecked`
+
+3. Opcionalmente, añade configuraciones estilísticas:
+   ```js
+   ...tseslint.configs.stylisticTypeChecked
+   ```
+
+4. Instala el plugin de React para ESLint:
+   ```bash
+   npm install eslint-plugin-react --save-dev
+   ```
+
+5. Actualiza el archivo `eslint.config.js` para incluir las configuraciones recomendadas del plugin:
+   ```js
+   // eslint.config.js
+   import react from 'eslint-plugin-react';
+
+   export default tseslint.config({
+     settings: { react: { version: '18.3' } },
+     plugins: { react },
+     rules: {
+       ...react.configs.recommended.rules,
+       ...react.configs['jsx-runtime'].rules,
+     },
+   });
+   ```
+
+## Scripts disponibles
+
+- `npm run dev`: Inicia el servidor de desarrollo con HMR.
+- `npm run build`: Construye la aplicación para producción.
+- `npm run lint`: Analiza el código utilizando ESLint.
+- `npm run preview`: Previsualiza la aplicación construida para producción.
+
+## Estructura del proyecto
+
+```plaintext
+src/
+├── assets/          # Recursos estáticos
+├── components/      # Componentes reutilizables
+├── pages/           # Páginas principales
+├── styles/          # Archivos de estilos
+├── App.tsx          # Componente principal
+├── main.tsx         # Punto de entrada
+└── vite-env.d.ts    # Tipos personalizados para Vite
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Personalización adicional
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- **Vite** permite configurar complementos adicionales en el archivo `vite.config.ts` para adaptar el proyecto a tus necesidades.
+- **TypeScript**: Si necesitas configuraciones avanzadas, puedes ajustar `tsconfig.json` según el alcance del proyecto.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Recursos adicionales
+
+- [Documentación oficial de Vite](https://vitejs.dev/)
+- [Guía de React con TypeScript](https://react-typescript-cheatsheet.netlify.app/)
+- [Documentación de ESLint](https://eslint.org/docs/latest/)
+
+---
+
+¡Gracias por usar esta plantilla! Si tienes sugerencias o encuentras algún problema, no dudes en abrir un issue.
